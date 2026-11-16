@@ -4,11 +4,11 @@ export const useOperationCounter = () => {
   const [count, setCount] = useState(0);
 
   const increment = () => {
-    setCount(count + 1);
+    setCount((previous) => previous + 1);
   };
 
   const decrement = () => {
-    setCount(count - 1);
+    setCount((previous) => Math.max(0, previous - 1));
   };
 
   const reset = () => {
