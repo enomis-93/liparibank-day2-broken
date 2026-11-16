@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useOperationCounter } from '../../hooks/useOperationCounter';
 import styles from './AccountBalanceCard.module.css';
 
@@ -7,7 +6,6 @@ interface AccountBalanceCardProps {
 }
 
 const AccountBalanceCard = ({ balance }: AccountBalanceCardProps) => {
-  const [displayBalance, setDisplayBalance] = useState(balance);
   const { count, increment, decrement, reset } = useOperationCounter();
 
   const formatCurrency = (value: number) =>
@@ -22,7 +20,7 @@ const AccountBalanceCard = ({ balance }: AccountBalanceCardProps) => {
 
       <div className={styles.balanceSection}>
         <span className={styles.balanceLabel}>Saldo disponibile</span>
-        <span className={styles.balanceValue}>{formatCurrency(displayBalance)}</span>
+        <span className={styles.balanceValue}>{formatCurrency(balance)}</span>
       </div>
 
       <div className={styles.operations}>
