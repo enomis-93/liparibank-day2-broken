@@ -29,7 +29,7 @@ const RecentTransactions = () => {
     }, 600);
 
     return () => clearTimeout(timer);
-  });
+  }, []);
 
   const formatDate = (dateStr: string) =>
     new Date(dateStr).toLocaleDateString('it-IT', {
