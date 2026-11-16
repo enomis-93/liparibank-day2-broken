@@ -58,8 +58,11 @@ Una volta risolti i 3 bug, aggiungi un componente `OperationHistory` che mostra 
 
 ### Criteri di accettazione
 
-- [ ] Cliccando i pulsanti, il saldo si aggiorna e la voce appare nello storico
-- [ ] Lo storico non supera mai 5 voci (FIFO: la voce più vecchia viene rimossa)
-- [ ] Ogni voce mostra tipo, importo e timestamp formattati con `toLocaleString`
-- [ ] Il `useEffect` di log si attiva solo quando cambia lo storico (dependency array corretto)
-- [ ] Nessun bug risolto in precedenza viene reintrodotto
+- [x] Cliccando i pulsanti, il saldo si aggiorna e la voce appare nello storico
+- [x] Lo storico non supera mai 5 voci (FIFO: la voce più vecchia viene rimossa)
+- [x] Ogni voce mostra tipo, importo e timestamp formattati con `toLocaleString`
+- [x] Il `useEffect` di log si attiva al mount e quando cambia lo storico
+- [x] Nessun bug risolto in precedenza viene reintrodotto
+
+Il saldo continua anche ad aggiornarsi automaticamente ogni tre secondi; tali
+variazioni simulate non vengono aggiunte allo storico dei depositi e prelievi.
